@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
 *{
   padding: 0;
   margin: 0;
@@ -15,32 +15,62 @@ body {
   font-size: 16px;
   line-height: 1;
   min-width: 770px;
-  font-family: 'Roboto', 'Noto Sans Kr', sans-serif;
+  font-family: 'Roboto', 'Nanum Gothic', sans-serif;
 }
 img {
   max-width: 100%;
   vertical-align: top;
 }
-
 .container {
   padding: 80px 0;
   background-color: #eef0f7;
 }
 .container .resume {
-  padding: 70px;
-  width: 770px;
-  margin: 0 auto;
-  background-color: #fff;
-  box-shadow: 0 0 10px #ddd;
-  box-sizing: border-box;
+	position: relative;
+	padding: 70px;
+	width: 770px;
+	margin: 0 auto;
+	background-color: #fff;
+	box-shadow: 0 0 10px #ddd;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.container .resume .txt_name{
+	position: absolute;
+	top: 120px;
+	right: 0;
+	transform: rotate(-90deg) translateY(-45%);
+	transform-origin: right;
+	z-index: 0;
+}
+.container .resume .txt_name p{
+	font-size: 150px;
+	font-weight: 500;
+	color: #fff;
+	text-shadow: 0 1px #dcdeff, 1px 0 #dcdeff, -1px 0 #dcdeff, 0 -1px #dcdeff;
+}
+.container .resume .txt_web{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transform: rotate(90deg) translate(-80%,-35%);
+	transform-origin: left;
+	z-index: 0;
+}
+.container .resume .txt_web p{
+	font-size: 150px;
+	font-weight: 500;
+	color: #fff;
+	text-shadow: 0 1px #dcdeff, 1px 0 #dcdeff, -1px 0 #dcdeff, 0 -1px #dcdeff;
 }
 #header {
   margin-bottom: 50px;
   text-align: center;
 }
 #header h1 {
-  font-size: 30px;
+  font-size: 29px;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 #header p {
   font-size: 15px;
@@ -50,6 +80,8 @@ img {
 }
 
 #about {
+	z-index: 100;
+	opacity: 0.99;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,7 +103,7 @@ img {
 }
 #about .desc .name p {
   font-size: 27px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 8px;
 }
 #about .desc .name p span {
@@ -89,8 +121,11 @@ img {
   display: inline-block;
   width: 30%;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -1px;
+}
+#about .desc .profile li p.eng {
+	font-weight: 500;
 }
 #about .desc .profile li p b {
   font-size: 13px;
@@ -105,7 +140,6 @@ img {
 #about .desc .profile li:last-child {
   margin-bottom: 0;
 }
-
 #list {
   padding: 60px 0 40px;
 }
@@ -123,7 +157,7 @@ img {
 }
 #list > ul > li .title p {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 7px;
 }
 #list > ul > li .title span {
@@ -131,12 +165,23 @@ img {
   color: #555;
 }
 #list > ul > li .content {
-  padding: 26px 26px 60px;
-  margin-left: 60px;
-  flex-basis: 70%;
-  background-color: rgba(238, 240, 247, 0.8);
-  border-radius: 10px;
-  box-sizing: border-box;
+	position: relative;
+	padding: 26px 26px 60px;
+	margin-left: 60px;
+	flex-basis: 70%;
+	background-color: rgba(238, 240, 247, 0.8);
+	border-radius: 10px;
+	box-sizing: border-box;
+}
+#list > ul > li .content::after{
+	content: '';
+	display: block;
+	position: absolute;
+	top: 20px;
+	right: 100%;
+	border-width: 10px;
+	border-style: solid;
+	border-color: transparent rgba(238, 240, 247, 0.8) transparent transparent;
 }
 #list > ul > li .content li {
   margin-bottom: 14px;
@@ -144,7 +189,7 @@ img {
 #list > ul > li .content li p {
   font-size: 11px;
   display: inline-block;
-  width: 25%;
+  width: 24%;
   letter-spacing: -1px;
 }
 #list > ul > li .content li p b{
@@ -161,7 +206,7 @@ img {
 #list > ul > li .content li.detail span {
   text-align: left;
   display: inline-block;
-  width: 74%;
+  width: 75%;
   font-size: 12px;
   font-weight: 400;
   color: #555;
@@ -204,7 +249,7 @@ img {
 }
 #footer p {
   font-size: 14px;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 #footer span {
   font-size: 14px;
