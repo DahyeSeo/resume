@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
 *{
   padding: 0;
   margin: 0;
@@ -14,13 +13,14 @@ a {
 body {
   font-size: 16px;
   line-height: 1;
-  min-width: 770px;
-  font-family: 'Roboto', 'Nanum Gothic', sans-serif;
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
 }
 img {
   max-width: 100%;
   vertical-align: top;
 }
+
+/* container */
 .container {
   padding: 80px 0;
   background-color: #eef0f7;
@@ -63,6 +63,21 @@ img {
 	color: #fff;
 	text-shadow: 0 1px #dcdeff, 1px 0 #dcdeff, -1px 0 #dcdeff, 0 -1px #dcdeff;
 }
+@media (max-width: 768px) {
+	.container {
+		padding: 0;
+	}
+	.container .resume {
+		width: 100%;
+		padding: 70px 30px;
+	}
+	.container .resume .txt_web,
+	.container .resume .txt_name{
+		display: none;
+	}
+}
+
+/* header */
 #header {
   margin-bottom: 50px;
   text-align: center;
@@ -78,7 +93,16 @@ img {
   text-indent: 9px;
   color: #555;
 }
+@media (max-width: 768px){
+	#header h1{
+		font-size: 20px;
+	}
+	#header p{
+		font-size: 10px;
+	}
+}
 
+/* about */
 #about {
   z-index: 100;
   position: relative;
@@ -141,6 +165,23 @@ img {
 #about .desc .profile li:last-child {
   margin-bottom: 0;
 }
+@media (max-width: 480px){
+	#about{
+		display: block;
+	}
+	#about .photo img {
+		border-radius: 0;
+		border: 4px solid #eee;
+	}	
+	#about .desc {
+		margin-top: 38px;
+	}
+	#about .desc .name{
+		display: none;
+	}
+}
+
+/* list */
 #list {
   padding: 60px 0 40px;
 }
@@ -243,7 +284,52 @@ img {
   background-color: #cbcefd;
   transform: translateX(-50%);
 }
+@media (max-width: 768px){
+	#list > ul > li {
+		display: block;
+		margin-bottom: 48px;
+	}
+	#list > ul > li .title {
+		text-align: left;
+	}
+	#list > ul > li .title p{
+		display: inline-block;
+		margin: 0;
+	}
+	#list > ul > li .title span{
+		font-size: 13px;
+		margin-left: 5px;
+	}
+	#list > ul > li .content{
+		margin: 0;
+		margin-top: 20px;
+		padding: 20px 10px;
+		border-radius: 4px;
+		background-color: #eef0f7;
+	}
+	#list > ul > li::after,
+	#list > ul::after,
+	#list > ul > li .content::after{
+		display: none;
+	}
+	#list > ul > li .content li.detail span {
+		display: block;
+		width: 100%;
+		font-size: 12px;
+		line-height: 1.5;
+	}
+	#list > ul li:first-child .content li p {
+		display: block;
+		width: 100%;
+		font-size: 12px;
+		letter-spacing: 0;
+	}
+	#list > ul > li .content li span{
+		font-size: 12px;
+	}
+}
 
+/* footer */
 #footer {
   text-align: center;
   padding: 10px 0 20px;
@@ -254,4 +340,13 @@ img {
 }
 #footer span {
   font-size: 14px;
-}/*# sourceMappingURL=style.css.map */
+}
+@media (max-width: 480px){
+	#footer p{
+		font-size: 12px;
+		margin-bottom: 10px;
+	}
+	#footer span {
+		font-size: 12px;
+	}
+}
